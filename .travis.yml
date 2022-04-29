@@ -1,0 +1,10 @@
+language: c
+before_script:
+  - git clone https://github.com/asdf-vm/asdf.git
+  - . asdf/asdf.sh
+script:
+  - asdf plugin-add kfilt ./
+  - asdf list-all kfilt
+  - asdf plugin-test kfilt ./ 'kfilt --version'
+os:
+  - osx
